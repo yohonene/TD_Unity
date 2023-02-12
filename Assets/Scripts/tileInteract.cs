@@ -11,6 +11,7 @@ public class tileInteract : MonoBehaviour
     [SerializeField]
     GameObject tower_held;
 
+
     void Start()
     {
         obj_renderer = GetComponent<Renderer>();
@@ -36,7 +37,7 @@ public class tileInteract : MonoBehaviour
     /// <summary>
     /// Sets Tower GameObject to this tile
     /// </summary>
-    public void setTower(GameObject tower)
+    public void setTower(GameObject tower, GameObject tower_manager)
     {
         
         if (!tower_held)
@@ -46,6 +47,8 @@ public class tileInteract : MonoBehaviour
             new_pos.y += 0.25f;
             //Create tower
             var new_tower = Instantiate(tower, new_pos, tower.transform.rotation);
+            //Set tower_manager as object parent
+            new_tower.transform.SetParent(tower_manager.transform);
             //Object is now holding a tower
             tower_held = new_tower;
         }

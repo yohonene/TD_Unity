@@ -9,6 +9,8 @@ public class rayCastMouse : MonoBehaviour
     LayerMask mask;
     [SerializeField]
     GameObject tower;
+    [SerializeField]
+    GameObject tower_manager;
 
     private tileInteract previous_tile;
 
@@ -24,6 +26,10 @@ public class rayCastMouse : MonoBehaviour
         rayCastHit();
     }
 
+    /// <summary>
+    /// Called by ButtonClick() Event in UI
+    /// </summary>
+    /// <param name="new_tower"></param>
     public void updateTowerHeld(GameObject new_tower)
     {
         tower = new_tower;
@@ -55,7 +61,11 @@ public class rayCastMouse : MonoBehaviour
                 var tile_hit = hit.transform.GetComponent<tileInteract>();
                 //Indicate that tile was hit
                 tile_hit.tileHit();
-                if (tower) { tile_hit.setTower(tower); tower = null; } //Set tower then remove it from "hand"
+                if (tower) {
+
+                    tile_hit.setTower(tower, tower_manager); tower = null;
+                } 
+                //Set tower then remove it from "hand"
                 previous_tile = tile_hit;
             }
         }

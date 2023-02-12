@@ -81,7 +81,6 @@ public class turretShoot : MonoBehaviour
         for (int x = 0; x < total_range; x++)
         {
             new_bullet.transform.Translate(Vector3.forward * projectile_speed * Time.deltaTime);
-            Debug.Log(x);
             yield return new WaitForFixedUpdate();
             
         }

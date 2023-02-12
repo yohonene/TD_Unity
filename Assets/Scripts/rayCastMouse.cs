@@ -24,6 +24,11 @@ public class rayCastMouse : MonoBehaviour
         rayCastHit();
     }
 
+    public void updateTowerHeld(GameObject new_tower)
+    {
+        tower = new_tower;
+    }
+
     private void rayCastCamera()
     {
         Vector3 mousePos = Input.mousePosition;
@@ -50,7 +55,7 @@ public class rayCastMouse : MonoBehaviour
                 var tile_hit = hit.transform.GetComponent<tileInteract>();
                 //Indicate that tile was hit
                 tile_hit.tileHit();
-                tile_hit.setTower(tower);
+                if (tower) { tile_hit.setTower(tower); tower = null; } //Set tower then remove it from "hand"
                 previous_tile = tile_hit;
             }
         }

@@ -99,6 +99,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4706054492200983281, guid: a9d26038a50c3ce4499c0728db0623cf, type: 3}
+  projectile_speed: 2
+  total_range: 100
+  rate_of_fire: 3
+  mask:
+    serializedVersion: 2
+    m_Bits: 64
+  ray_distance: 10
 --- !u!136 &8972143829123231255
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -13,10 +13,12 @@ public class turretShoot : MonoBehaviour
     private float total_range;
     [SerializeField]
     private float rate_of_fire;
+    [SerializeField]
+    LayerMask mask;
+    [SerializeField]
+    private float ray_distance;
 
-
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         StartCoroutine(ShootTimer());
     }
@@ -29,8 +31,10 @@ public class turretShoot : MonoBehaviour
     /// <returns></returns>
     private IEnumerator ShootTimer()
     {
-        while (true)
+        //While raycast hits enemy in line
+        while (raycastEnemyCheck())
         {
+            Debug.Log(raycastEnemyCheck());
             //Shoot projectile and move
             StartCoroutine(Shoot());
             //Spawn X amount of projectiles within 1 second
@@ -38,6 +42,24 @@ public class turretShoot : MonoBehaviour
         }
 
         
+    }
+
+    private void FixedUpdate()
+    {
+        //Show what turrets are aiming at
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward)*ray_distance, Color.blue);
+    }
+
+    private bool raycastEnemyCheck()
+    {
+        Ray ray = new Ray(transform.position, transform.TransformDirection(Vector3.forward));
+        RaycastHit hit;
+        if (Physics.Raycast(ray,out hit,ray_distance,mask))
+        {
+            Debug.Log(hit.distance);
+            return true;
+        }
+        return false;
     }
 
     /// <summary>

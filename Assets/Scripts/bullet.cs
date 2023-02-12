@@ -10,7 +10,6 @@ public class bullet : MonoBehaviour
         //Check if enemy is hit
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Enemy hit");
             //Attempt to get enemy class access
             other.gameObject.TryGetComponent(out enemy enemy_class);
             //Damage enemy;

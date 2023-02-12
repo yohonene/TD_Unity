@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 545953751160292603}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.39012, y: 0.39012, z: 0.39012}
+  m_LocalScale: {x: 0.39012, y: 0.7329575, z: 0.39012}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5858722025405181855}
@@ -287,10 +287,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e426b030f2c4940a52b159ced442b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 3
+  _health: 1
   move_speed: 1
+  attack_speed: 2
   enemy_renderer: {fileID: 5858722025405181841}
   textScript: {fileID: 7091347303130094119}
+  _towerNotNear: 0
+  isAttacking: 0
+  ray_distance: 1.1
+  mask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!136 &5858722025405181842
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -337,9 +344,9 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 118
   m_CollisionDetection: 0
 --- !u!1 &5858722026642917245
 GameObject:

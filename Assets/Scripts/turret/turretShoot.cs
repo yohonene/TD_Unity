@@ -32,13 +32,18 @@ public class turretShoot : MonoBehaviour
     private IEnumerator ShootTimer()
     {
         //While raycast hits enemy in line
-        while (raycastEnemyCheck())
+        while (true)
         {
-            Debug.Log(raycastEnemyCheck());
-            //Shoot projectile and move
-            StartCoroutine(Shoot());
-            //Spawn X amount of projectiles within 1 second
-            yield return new WaitForSeconds(1/rate_of_fire);
+            //Check if there is an enemy infront
+            if (raycastEnemyCheck())
+            {
+                //Shoot projectile and move
+                StartCoroutine(Shoot());
+                //Spawn X amount of projectiles within 1 second
+                yield return new WaitForSeconds(1 / rate_of_fire);
+            }
+            //Else return loop
+            yield return null;
         }
 
         
@@ -56,7 +61,6 @@ public class turretShoot : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray,out hit,ray_distance,mask))
         {
-            Debug.Log(hit.distance);
             return true;
         }
         return false;
@@ -73,10 +77,13 @@ public class turretShoot : MonoBehaviour
         //Spawn bullet, set to shooters position and rotation
         var new_bullet = Instantiate(bullet, transform.position, transform.rotation);
         //Shoot to max total range
+
         for (int x = 0; x < total_range; x++)
         {
             new_bullet.transform.Translate(Vector3.forward * projectile_speed * Time.deltaTime);
+            Debug.Log(x);
             yield return new WaitForFixedUpdate();
+            
         }
         //Destroy after it has reached maximum range
         Destroy(new_bullet);

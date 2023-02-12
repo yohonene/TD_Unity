@@ -2,33 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemy : MonoBehaviour
+public class turret : MonoBehaviour
 {
+    // Start is called before the first frame update
     [SerializeField]
     private float _health;
     [SerializeField]
-    private float move_speed;
+    turretHealthText textScript;
     [SerializeField]
-    private Renderer enemy_renderer;
-    [SerializeField]
-    enemyHealthText textScript;
+    Renderer tower_renderer;
 
-    private void Start()
+    /// <summary>
+    /// Returns health to requestee
+    /// </summary>
+    /// <returns></returns>
+    public float getHealth()
     {
-        enemy_renderer.material.color = Color.blue;
+        return _health;
     }
 
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        transform.Translate(Vector3.forward * move_speed * Time.deltaTime);
-    }
 
     /// <summary>
     /// Subtracts health from enemy and calls change colour
     /// </summary>
-    public void damageEnemy()
+    public void damageTower()
     {
         //Change health
         _health -= 1;
@@ -45,23 +42,15 @@ public class enemy : MonoBehaviour
         textScript.textUpdate();
     }
 
-    /// <summary>
-    /// Returns health to requestee
-    /// </summary>
-    /// <returns></returns>
-    public float getHealth()
-    {
-        return _health;
-    }
-
     private IEnumerator change_colour()
     {
         //Save original colour
-        var org_colour = Color.blue;
+        var org_colour = tower_renderer.material.color;
         //Change colour to red
-        enemy_renderer.material.color = Color.red;
+        tower_renderer.material.color = Color.red;
         //Wait 1 second before changing back
-        yield return new WaitForSeconds (0.5f);
-        enemy_renderer.material.color = org_colour;
+        yield return new WaitForSeconds(0.5f);
+        tower_renderer.material.color = org_colour;
     }
+
 }

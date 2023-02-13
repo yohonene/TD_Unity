@@ -290,6 +290,7 @@ MonoBehaviour:
   _health: 3
   textScript: {fileID: 66182739752468264}
   tower_renderer: {fileID: 8972143829123231272}
+  _gold_cost: 2
 --- !u!114 &6076592477602175929
 MonoBehaviour:
   m_ObjectHideFlags: 0

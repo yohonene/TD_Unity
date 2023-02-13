@@ -1046,6 +1046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 904155762}
   - component: {fileID: 904155763}
+  - component: {fileID: 904155764}
   m_Layer: 0
   m_Name: Tower_Manager
   m_TagString: Untagged
@@ -1082,6 +1083,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gold: {fileID: 11400000, guid: 5c3de292774024f419aaed79437a1f39, type: 2}
   gold_text: {fileID: 428467254}
+  player_starting_gold: 3
+--- !u!114 &904155764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904155761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f61eeb55861114aa8908e43d3fbab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gold: {fileID: 11400000, guid: 5c3de292774024f419aaed79437a1f39, type: 2}
+  gold_text: {fileID: 904155763}
 --- !u!1 &911927929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,14 +1320,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.38145778, y: -0.59378743, z: 0.37927705, w: 0.5983773}
+  m_LocalRotation: {x: 0.37974077, y: -0.59648716, z: 0.38099962, w: 0.59568393}
   m_LocalPosition: {x: 0.54, y: 3.71, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: -0.52726}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 65.085, y: -89.481, z: 0.121}
+  m_LocalEulerAnglesHint: {x: 65.085, y: -90, z: 0.121}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1329,6 +1345,7 @@ MonoBehaviour:
     m_Bits: 8
   tower: {fileID: 0}
   tower_manager: {fileID: 904155761}
+  tower_displayed: {fileID: 0}
 --- !u!1 &1223912738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,8 +1444,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223912738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6587081, y: -0.17, z: 2.0439}
-  m_LocalScale: {x: 7.9588, y: 0.1, z: 8.136916}
+  m_LocalPosition: {x: -0.7656, y: -0.17, z: 3.3381}
+  m_LocalScale: {x: 8.550487, y: 0.1, z: 11.883414}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

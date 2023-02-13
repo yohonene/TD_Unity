@@ -105,6 +105,8 @@ public class rayCastMouse : MonoBehaviour
             Destroy(shoot);
             tower_displayed.TryGetComponent(out turret twer);
             Destroy(twer);
+            tower_displayed.TryGetComponent(out support supp);
+            Destroy(supp);
             tower_displayed.layer = 8; //8 refers to layer Potential_Tower;
         }
     }                
@@ -113,7 +115,6 @@ public class rayCastMouse : MonoBehaviour
     {
         //Calculate ray baed on screen/camera position
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        Debug.Log(ray);
         displayPotentialTower(ray);
 
         if (Input.GetMouseButtonDown(0))

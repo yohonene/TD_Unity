@@ -9,11 +9,13 @@ public class goldText : MonoBehaviour
     public player_values _gold;
     [SerializeField]
     TextMeshProUGUI gold_text;
+    [SerializeField]
+    int player_starting_gold;
 
 
     private void Start()
     {
-        _gold.gold_total = 0;
+        _gold.gold_total = player_starting_gold;
         updateText();
     }
 
@@ -30,7 +32,7 @@ public class goldText : MonoBehaviour
 
     public void updateText()
     {
-        gold_text.text = "gold: " + _gold.gold_total;  
+        gold_text.text = "Gold: " + _gold.gold_total;  
     }
 
     private void FixedUpdate()

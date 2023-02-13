@@ -11,6 +11,10 @@ public class turret : MonoBehaviour
     turretHealthText textScript;
     [SerializeField]
     Renderer tower_renderer;
+    [SerializeField]
+    int _gold_cost;
+
+    public int Gold_cost => _gold_cost;
 
     /// <summary>
     /// Returns health to requestee

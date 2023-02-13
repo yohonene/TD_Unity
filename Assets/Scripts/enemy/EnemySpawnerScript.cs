@@ -9,6 +9,7 @@ public class EnemySpawnerScript : MonoBehaviour
     [SerializeField]
     private float spawn_delay;
 
+
     private void Start()
     {
         StartCoroutine(spawnEnemies());
@@ -18,8 +19,8 @@ public class EnemySpawnerScript : MonoBehaviour
     {
         while (true)
         {
+            yield return new WaitForSeconds(spawn_delay * Random.Range(1, 10));
             Instantiate(enemy_object, transform.position, transform.rotation);
-            yield return new WaitForSeconds(spawn_delay);
         }
         
     }

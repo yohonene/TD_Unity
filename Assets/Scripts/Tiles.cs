@@ -60,6 +60,8 @@ public class Tiles : MonoBehaviour
         //Create Vector so Tower is slightly above centre of tile
         Vector3 new_pos = transform.position;
         spawn_pos.y += 0.25f;
+        //Put spawners just before tile (not on)
+        spawn_pos.z += 1.5f;
         //Create spawner, flip 180
         var spawner = Instantiate(enemySpawner, spawn_pos, 
             enemySpawner.transform.rotation * Quaternion.Euler (0f, 180f, 0f));

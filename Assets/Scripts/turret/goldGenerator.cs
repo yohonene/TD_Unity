@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class goldGenerator : MonoBehaviour
+public class goldGenerator : support
 {
     [SerializeField]
     float time_between_gen;
@@ -32,8 +32,8 @@ public class goldGenerator : MonoBehaviour
     {
         while (gameObject != null)
         {
-            gold_text.addGold(gold_per_tick);
             yield return new WaitForSeconds(time_between_gen);
+            gold_text.addGold(gold_per_tick);
         }
         
     }

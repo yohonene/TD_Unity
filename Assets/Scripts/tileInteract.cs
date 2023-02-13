@@ -12,6 +12,7 @@ public class tileInteract : MonoBehaviour
     GameObject tower_held;
 
 
+
     void Start()
     {
         obj_renderer = GetComponent<Renderer>();
@@ -51,8 +52,12 @@ public class tileInteract : MonoBehaviour
     /// </summary>
     public void setTower(GameObject tower, GameObject tower_manager)
     {
-        
-        if (!tower_held)
+        //Get gold check method from tower_manager
+        tower_manager.TryGetComponent(out goldPriceCheck checker);
+        //Throw an error if manager cannot compare gold
+        if (!checker) { throw new System.Exception("No goldPriceCheck component in Tower Manager"); }
+
+        if (!tower_held & checker.priceCheck(tower))
         {
             //Create Vector so Tower is slightly above centre of tile
             Vector3 new_pos = transform.position;

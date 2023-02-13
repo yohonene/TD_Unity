@@ -21,11 +21,9 @@ public class enemyEndZone : MonoBehaviour
             //Destroy enemy
             Destroy(other.gameObject);
 
-            Debug.Log(enemies_let_in >= defeat_condition);
 
             if (enemies_let_in >= defeat_condition)
             {
-                Debug.Log("called");
                 //Display game over UI
                 game_over_screen.callGameOver();
             }

@@ -63,16 +63,31 @@ public class rayCastMouse : MonoBehaviour
                 //If a tile before this was selected, deselect that one
                 if (previous_tile != null) { previous_tile.tileLeft(); }
 
-                //If tile detected, snap to centre and show
-                tower_displayed.SetActive(true);
-                var tile_pos = hit.collider.gameObject.transform.position;
-                tower_displayed.transform.position = tile_pos;
+
 
                 var tile_hit = hit.transform.GetComponent<tileInteract>();
-                //Indicate that tile was hit
-                tile_hit.tileHit();
+
+                //If this tile is not holding a tower
+                if (!tile_hit.isHoldingTower())
+                {
+                    //Indicate that tile was hit
+                    tile_hit.tileHit();
+
+                    //If tile detected, snap to centre and show
+                    tower_displayed.SetActive(true);
+                    var tile_pos = hit.collider.gameObject.transform.position;
+                    //Offset so it isn't halfway in the ground
+                    tile_pos.y += 0.25f;
+                    tower_displayed.transform.position = tile_pos;
+
+                } else
+                {
+                    //Else if hovering over already placed tower
+                    tower_displayed.SetActive(false);
+                }
                 //Update previous tile
                 previous_tile = tile_hit;
+
             } else
             {
                 //If a tile has not been detected, hide
@@ -105,6 +120,8 @@ public class rayCastMouse : MonoBehaviour
         {
             RaycastHit hit;
 
+            //Remove highlight under tile
+            if (previous_tile != null) { previous_tile.tileLeft(); }
 
             //Sends out ray, checks LayerMask and only detects those
             //In this instance it will be the TILE layer

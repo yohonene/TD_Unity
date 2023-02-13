@@ -26,6 +26,18 @@ public class tileInteract : MonoBehaviour
         obj_renderer.material.color = new Color(0.5f, 1f, 0.5f, 0.33f);
     }
 
+    public bool isHoldingTower()
+    {
+        if (tower_held != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     /// <summary>
     /// Changes colour back to normal colour when called
     /// </summary>

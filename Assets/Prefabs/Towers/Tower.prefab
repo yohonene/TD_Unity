@@ -394,6 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
+  _damage: 1
   textScript: {fileID: 66182739752468264}
   tower_renderer: {fileID: 8972143829123231272}
   _gold_cost: 2

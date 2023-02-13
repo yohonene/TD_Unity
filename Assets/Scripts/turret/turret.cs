@@ -8,6 +8,8 @@ public class turret : MonoBehaviour
     [SerializeField]
     private float _health;
     [SerializeField]
+    private float _damage;
+    [SerializeField]
     turretHealthText textScript;
     [SerializeField]
     Renderer tower_renderer;
@@ -25,6 +27,15 @@ public class turret : MonoBehaviour
         return _health;
     }
 
+
+    /// <summary>
+    /// Returns _damage to requestee
+    /// </summary>
+    /// <returns></returns>
+    public float getDamage()
+    {
+        return _damage;
+    }
 
     /// <summary>
     /// Subtracts health from enemy and calls change colour

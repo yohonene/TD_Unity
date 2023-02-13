@@ -88,11 +88,12 @@ public class enemy : MonoBehaviour
 
     /// <summary>
     /// Subtracts health from enemy and calls change colour
+    /// Default damage of 1, if damage is not provided
     /// </summary>
-    public void damageEnemy()
+    public void damageEnemy(float dmg = 1)
     {
         //Change health
-        _health -= 1;
+        _health -= dmg;
         //Visually change appearance to show that damage was taken
         StartCoroutine(change_colour());
 

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -6824869006765697554}
   - component: {fileID: 4706054492200983294}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Wizard_Bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: caeb7ea124fa10a45a344b5a1f6111ff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b63df1556cfeb1438e4fe57943fb60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower_owner: {fileID: 93822573150227033, guid: 4e4ed1a9ab4084a4cbe307ce55d2ded7, type: 3}
 --- !u!65 &4706054492200983294
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -32,7 +32,6 @@ public class goldGenerator : MonoBehaviour
     {
         while (gameObject != null)
         {
-            Debug.Log("in loop");
             gold_text.addGold(gold_per_tick);
             yield return new WaitForSeconds(time_between_gen);
         }

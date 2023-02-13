@@ -6,8 +6,10 @@ public class buttonInteraction : MonoBehaviour
 {
     [SerializeField]
     GameObject tower;
+
     public void buttonSelected()
     {
         Debug.Log("Selected:" + tower.name);
+
     }
 }

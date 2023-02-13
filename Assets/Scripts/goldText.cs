@@ -6,7 +6,7 @@ using UnityEngine;
 public class goldText : MonoBehaviour
 {
     [SerializeField]
-    public gold _gold;
+    public player_values _gold;
     [SerializeField]
     TextMeshProUGUI gold_text;
 
@@ -30,10 +30,7 @@ public class goldText : MonoBehaviour
 
     public void updateText()
     {
-        Debug.Log("called");
-        gold_text.text = "gold: " + _gold.gold_total;
-        Debug.Log("updating text" + gold_text.text);
-        
+        gold_text.text = "gold: " + _gold.gold_total;  
     }
 
     private void FixedUpdate()

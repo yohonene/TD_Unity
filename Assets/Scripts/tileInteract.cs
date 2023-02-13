@@ -24,6 +24,7 @@ public class tileInteract : MonoBehaviour
     /// </summary>
     public void tileHit()
     {
+        //Green
         obj_renderer.material.color = new Color(0.5f, 1f, 0.5f, 0.33f);
     }
 
@@ -52,12 +53,7 @@ public class tileInteract : MonoBehaviour
     /// </summary>
     public void setTower(GameObject tower, GameObject tower_manager)
     {
-        //Get gold check method from tower_manager
-        tower_manager.TryGetComponent(out goldPriceCheck checker);
-        //Throw an error if manager cannot compare gold
-        if (!checker) { throw new System.Exception("No goldPriceCheck component in Tower Manager"); }
-
-        if (!tower_held & checker.priceCheck(tower))
+        if (!tower_held)
         {
             //Create Vector so Tower is slightly above centre of tile
             Vector3 new_pos = transform.position;

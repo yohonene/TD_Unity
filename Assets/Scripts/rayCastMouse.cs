@@ -14,6 +14,8 @@ public class rayCastMouse : MonoBehaviour
     GameObject tower_manager;
     [SerializeField]
     GameObject tower_displayed = null;
+    [SerializeField]
+    goldPriceCheck checker;
 
     private tileInteract previous_tile;
 
@@ -35,7 +37,8 @@ public class rayCastMouse : MonoBehaviour
     /// <param name="new_tower"></param>
     public void updateTowerHeld(GameObject new_tower)
     {
-        tower = new_tower;
+        if (checker.priceCheck(new_tower)) { tower = new_tower; }
+        Debug.Log("Tower is too expensive");
     }
 
     private void rayCastCamera()

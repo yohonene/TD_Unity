@@ -64,6 +64,7 @@ public class tileInteract : MonoBehaviour
             new_tower.transform.SetParent(tower_manager.transform);
             //Object is now holding a tower
             tower_held = new_tower;
+
         }
     }
 

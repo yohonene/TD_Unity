@@ -36,9 +36,13 @@ public class rayCastMouse : MonoBehaviour
     /// </summary>
     /// <param name="new_tower"></param>
     public void updateTowerHeld(GameObject new_tower)
-    {
-        if (checker.priceCheck(new_tower)) { tower = new_tower; }
-        Debug.Log("Tower is too expensive");
+    {;
+        //If can afford, change tower to button allocated tower, reset potential tower display
+        if (checker.priceCheck(new_tower)) { tower = new_tower; tower_displayed = null;} 
+        else
+        {
+            tower = null;
+        }
     }
 
     private void rayCastCamera()
@@ -66,8 +70,6 @@ public class rayCastMouse : MonoBehaviour
                 //If a tile before this was selected, deselect that one
                 if (previous_tile != null) { previous_tile.tileLeft(); }
 
-
-
                 var tile_hit = hit.transform.GetComponent<tileInteract>();
 
                 //If this tile is not holding a tower
@@ -93,8 +95,10 @@ public class rayCastMouse : MonoBehaviour
 
             } else
             {
-                //If a tile has not been detected, hide
+                //If a tile has not been detected, hide both object and green select
+                if (previous_tile != null) { previous_tile.tileLeft(); }
                 tower_displayed.SetActive(false);
+
             }
             return;
         }
@@ -134,7 +138,9 @@ public class rayCastMouse : MonoBehaviour
                 var tile_hit = hit.transform.GetComponent<tileInteract>();
                 //Indicate that tile was hit
                 if (tower) {
-
+                    //Deduct gold from player
+                    checker.priceDeduct(tower);
+                    //Place tower and remove it from hand
                     tile_hit.setTower(tower, tower_manager); tower = null;
                     Destroy(tower_displayed); //Remove potential_tower being displayed
                     tower_displayed = null; 

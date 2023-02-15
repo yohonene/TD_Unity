@@ -23,10 +23,15 @@ public class enemy : MonoBehaviour
     float ray_distance;
     [SerializeField]
     LayerMask mask;
+    [SerializeField]
+    Animator enemy_animator;
+
+    private Color org_colour;
+
 
     private void Start()
     {
-        enemy_renderer.material.color = Color.blue;
+        org_colour = enemy_renderer.material.color;
     }
 
 
@@ -60,6 +65,7 @@ public class enemy : MonoBehaviour
         else
         {
             _towerNotNear = true;
+            enemy_animator.SetBool("isAttacking", false);
         }
 
         
@@ -76,6 +82,7 @@ public class enemy : MonoBehaviour
         tower.TryGetComponent(out turret _turret);
         if (_turret)
         {
+            enemy_animator.SetBool("isAttacking", true);
             _turret.damageTower();
             
         }
@@ -118,8 +125,6 @@ public class enemy : MonoBehaviour
 
     private IEnumerator change_colour()
     {
-        //Save original colour
-        var org_colour = Color.blue;
         //Change colour to red
         enemy_renderer.material.color = Color.red;
         //Wait 1 second before changing back

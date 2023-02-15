@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy_object: {fileID: 5858722025405181843, guid: 2dd739921559d72429436cf1de249905, type: 3}
-  initial_spawn_delay: 1
+  second_enemy_object: {fileID: 5858722025405181843, guid: a7a40170925b66a418e0b6f9326c694b, type: 3}
+  initial_spawn_delay: 10
   current_spawn_delay: 0
   chance_of_spawn: 6
+  chance_for_2nd_enemy: 5

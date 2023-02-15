@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae04bd0098b38f546a03b283e6989d2e, type: 3}
   m_Name: Player Values
   m_EditorClassIdentifier: 
-  gold_total: 524
-  time: 66.85571
+  gold_total: 104
+  time: 22.852657

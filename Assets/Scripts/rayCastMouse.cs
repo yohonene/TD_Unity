@@ -178,7 +178,7 @@ public class rayCastMouse : MonoBehaviour
                 //Indicate that tile was hit
 
                 //Check if banana is able to be placed
-                if (!canBuyBanana) { return; }
+                if (!canBuyBanana & tower.CompareTag("Support")) { return; }
 
                 if (tower) {
                     //Deduct gold from player

@@ -31,8 +31,6 @@ public class EnemySpawnerScript : MonoBehaviour
 
             //Roll to see if this spawner will output an enemy
             var x = Random.Range(0,chance_of_spawn+1);
-
-            Debug.Log(x);
             if(x > chance_of_spawn)
             {
                 Instantiate(enemy_object, transform.position, transform.rotation);
@@ -41,9 +39,9 @@ public class EnemySpawnerScript : MonoBehaviour
             if (!(current_spawn_delay < 2f))
             {
                 //Slight decrease delay;
-                current_spawn_delay -= 0.15f;
+                current_spawn_delay -= 0.25f;
 
-                if(current_spawn_delay < initial_spawn_delay/1.25)
+                if(current_spawn_delay < initial_spawn_delay/1.5)
                 {
                     chance_of_spawn -= 0.1f;
                 }

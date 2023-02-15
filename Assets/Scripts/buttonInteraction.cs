@@ -11,6 +11,8 @@ public class buttonInteraction : MonoBehaviour
     [SerializeField]
     goldPriceCheck checker;
 
+
+
     public void buttonSelected()
     {
         Debug.Log("Selected:" + tower.name);
@@ -31,4 +33,6 @@ public class buttonInteraction : MonoBehaviour
 
         button.colors = colours;
     }
+
+
 }

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class rayCastMouse : MonoBehaviour
 {
@@ -16,6 +18,10 @@ public class rayCastMouse : MonoBehaviour
     GameObject tower_displayed = null;
     [SerializeField]
     goldPriceCheck checker;
+    [SerializeField]
+    UnityEngine.UI.Button banana_button;
+
+    public bool canBuyBanana = true;
 
     private tileInteract previous_tile;
 
@@ -37,6 +43,7 @@ public class rayCastMouse : MonoBehaviour
     /// <param name="new_tower"></param>
     public void updateTowerHeld(GameObject new_tower)
     {;
+
         //If can afford, change tower to button allocated tower, reset potential tower display
         if (checker.priceCheck(new_tower)) { tower = new_tower; tower_displayed = null;} 
         else
@@ -114,9 +121,41 @@ public class rayCastMouse : MonoBehaviour
             Destroy(twer);
             tower_displayed.TryGetComponent(out support supp);
             Destroy(supp);
+            tower_displayed.TryGetComponent(out banana ban);
+            Destroy(ban);
             tower_displayed.layer = 8; //8 refers to layer Potential_Tower;
         }
     }                
+
+    //Stop user from buying banana for X seconds
+    private IEnumerator buyCooldown(int time)
+    {
+        canBuyBanana = false;
+        banana_button.interactable = false;
+        //Set button to grey to signify off cooldown
+        ColorBlock colours = banana_button.colors;
+        colours.normalColor = Color.gray;
+        yield return new WaitForSeconds(time);
+        colours.normalColor = Color.white;
+        banana_button.interactable = true;
+        canBuyBanana = true;
+    }
+
+
+    private void checkSupport()
+    {
+        //If support tower is bought and its not on cooldown, set it on cooldown and continue, else return
+        if (tower.CompareTag("Support"))
+        {
+
+            if (!canBuyBanana) { return; }
+            else
+            {
+                StartCoroutine(buyCooldown(5));
+            }
+        }
+
+    }
 
     private void rayCastHit()
     {
@@ -137,12 +176,18 @@ public class rayCastMouse : MonoBehaviour
             {
                 var tile_hit = hit.transform.GetComponent<tileInteract>();
                 //Indicate that tile was hit
+
+                //Check if banana is able to be placed
+                if (!canBuyBanana) { return; }
+
                 if (tower) {
                     //Deduct gold from player
                     checker.priceDeduct(tower);
+                    checkSupport(); //Put banana on cooldown if it was chosen
                     //Place tower and remove it from hand
                     tile_hit.setTower(tower, tower_manager); tower = null;
                     Destroy(tower_displayed); //Remove potential_tower being displayed
+
                     tower_displayed = null; 
                 } 
 

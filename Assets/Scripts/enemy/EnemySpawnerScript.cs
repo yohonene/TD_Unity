@@ -11,7 +11,7 @@ public class EnemySpawnerScript : MonoBehaviour
     [SerializeField]
     private float current_spawn_delay;
     [SerializeField]
-    private int chance_of_spawn;
+    float chance_of_spawn;
 
 
     private void Start()
@@ -33,7 +33,7 @@ public class EnemySpawnerScript : MonoBehaviour
             var x = Random.Range(0,chance_of_spawn+1);
 
             Debug.Log(x);
-            if(x == chance_of_spawn)
+            if(x > chance_of_spawn)
             {
                 Instantiate(enemy_object, transform.position, transform.rotation);
             }
@@ -41,16 +41,12 @@ public class EnemySpawnerScript : MonoBehaviour
             if (!(current_spawn_delay < 2f))
             {
                 //Slight decrease delay;
-                current_spawn_delay -= 0.1f;
+                current_spawn_delay -= 0.15f;
 
-                if(current_spawn_delay < 4f)
+                if(current_spawn_delay < initial_spawn_delay/1.25)
                 {
-                    chance_of_spawn -= 1;
+                    chance_of_spawn -= 0.1f;
                 }
-            }
-            else
-            {
-                chance_of_spawn -= 1;
             }
         }
         

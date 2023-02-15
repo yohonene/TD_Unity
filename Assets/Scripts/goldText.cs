@@ -32,7 +32,7 @@ public class goldText : MonoBehaviour
 
     public void updateText()
     {
-        gold_text.text = "Gold: " + _gold.gold_total;  
+        gold_text.text = _gold.gold_total.ToString();  
     }
 
     private void FixedUpdate()

@@ -9,6 +9,8 @@ public class goldGenerator : support
     float time_between_gen;
     [SerializeField]
     int gold_per_tick;
+    [SerializeField]
+    Animator cart_animator;
 
     goldText gold_text;
 
@@ -32,8 +34,11 @@ public class goldGenerator : support
     {
         while (gameObject != null)
         {
+            //Play the animation once
+            cart_animator.Play("GetGold", -1, 0f);
             yield return new WaitForSeconds(time_between_gen);
             gold_text.addGold(gold_per_tick);
+
         }
         
     }

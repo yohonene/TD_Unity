@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e426b030f2c4940a52b159ced442b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 3
+  _health: 5
   move_speed: 0.25
   attack_speed: 1
   enemy_renderer: {fileID: 5858722025405181841}

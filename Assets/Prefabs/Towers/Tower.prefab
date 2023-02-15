@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1654148355542523529}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.25}
+  m_LocalScale: {x: 1, y: 1, z: 0.21295}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8972143829123231274}
@@ -322,7 +322,7 @@ Transform:
   m_GameObject: {fileID: 8972143829123231254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.3434596, y: 0.606, z: -3.489402}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.40884, y: 0.420775, z: 0.447635}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8972143829804815683}
@@ -396,8 +396,8 @@ MonoBehaviour:
   _health: 3
   _damage: 1
   textScript: {fileID: 66182739752468264}
-  tower_renderer: {fileID: 8972143829123231272}
-  _gold_cost: 2
+  tower_renderer: {fileID: 7710531141211344224}
+  _gold_cost: 6
 --- !u!114 &6076592477602175929
 MonoBehaviour:
   m_ObjectHideFlags: 0

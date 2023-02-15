@@ -1218,7 +1218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gold: {fileID: 11400000, guid: 5c3de292774024f419aaed79437a1f39, type: 2}
   gold_text: {fileID: 428467254}
-  player_starting_gold: 3
+  player_starting_gold: 5
 --- !u!114 &904155764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2328,6 +2328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 8972143829123231254, guid: 86e9fcc5958c4bc4496f9587487960d9, type: 3}
+  checker: {fileID: 904155764}
 --- !u!222 &1548820098
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2512,6 +2513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 8972143829123231254, guid: 6104ccedb2708074fa1c01ca37cf10c0, type: 3}
+  checker: {fileID: 904155764}
 --- !u!114 &1630869643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2848,6 +2850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 8972143829123231254, guid: 4e4ed1a9ab4084a4cbe307ce55d2ded7, type: 3}
+  checker: {fileID: 904155764}
 --- !u!222 &2040800786
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3015,7 +3018,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1724802492953059515, guid: 8d5d75a074c91ca46ad5c3d54bb26b68, type: 3}
       propertyPath: rows
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1724802492953059515, guid: 8d5d75a074c91ca46ad5c3d54bb26b68, type: 3}
       propertyPath: columns
@@ -3039,7 +3042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5766843869928456940, guid: 8d5d75a074c91ca46ad5c3d54bb26b68, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.45
+      value: 7.51
       objectReference: {fileID: 0}
     - target: {fileID: 5766843869928456940, guid: 8d5d75a074c91ca46ad5c3d54bb26b68, type: 3}
       propertyPath: m_LocalRotation.w

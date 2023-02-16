@@ -20,6 +20,8 @@ public class rayCastMouse : MonoBehaviour
     goldPriceCheck checker;
     [SerializeField]
     UnityEngine.UI.Button banana_button;
+    [SerializeField]
+    AudioClip sfx;
 
     public bool canBuyBanana = true;
 
@@ -186,6 +188,7 @@ public class rayCastMouse : MonoBehaviour
                     checkSupport(); //Put banana on cooldown if it was chosen
                     //Place tower and remove it from hand
                     tile_hit.setTower(tower, tower_manager); tower = null;
+                    SoundManager.Instance.PlaySound(sfx);
                     Destroy(tower_displayed); //Remove potential_tower being displayed
 
                     tower_displayed = null; 

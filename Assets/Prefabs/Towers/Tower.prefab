@@ -419,6 +419,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   ray_distance: 10
+  shoot_sfx: {fileID: 8300000, guid: 03d7075f08465d342a8f89c4a30bbb33, type: 3}
 --- !u!136 &8972143829123231255
 CapsuleCollider:
   m_ObjectHideFlags: 0

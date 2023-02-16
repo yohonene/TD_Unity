@@ -10,7 +10,8 @@ public class buttonInteraction : MonoBehaviour
     GameObject tower;
     [SerializeField]
     goldPriceCheck checker;
-
+    [SerializeField]
+    AudioClip clip;
 
 
     public void buttonSelected()
@@ -28,7 +29,9 @@ public class buttonInteraction : MonoBehaviour
         }
         else
         {
+
             colours.selectedColor = Color.red;
+            SoundManager.Instance.PlaySound(clip);
         }
 
         button.colors = colours;

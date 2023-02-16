@@ -290,6 +290,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   enemy_animator: {fileID: 8522654257235489783}
+  sfx: {fileID: 8300000, guid: dcade94ec4bd1fa4f95c18ee6c08189d, type: 3}
+  enemy_death_clip: {fileID: 8300000, guid: 17d5ce804f75dbb4ca2e5266e3428c9d, type: 3}
 --- !u!136 &5858722025405181842
 CapsuleCollider:
   m_ObjectHideFlags: 0

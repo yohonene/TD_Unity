@@ -170,3 +170,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turret_values: {fileID: 8323514753940607093}
   particle_system: {fileID: 5893676213706011663, guid: 589b7cc3a64feff45a54093ffb794e69, type: 3}
+  sfx: {fileID: 8300000, guid: b7456f019db036545aef35a827f92a15, type: 3}

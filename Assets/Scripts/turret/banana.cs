@@ -9,6 +9,8 @@ public class banana : MonoBehaviour
     turret turret_values;
     [SerializeField]
     GameObject particle_system;
+    [SerializeField]
+    AudioClip sfx;
 
     private float damage;
 
@@ -24,6 +26,7 @@ public class banana : MonoBehaviour
             //Play particle explosion and deal 5 damage, kill banana after
             other.gameObject.TryGetComponent(out enemy enemy_class);
             var explosion = Instantiate(particle_system, other.gameObject.transform.position, Quaternion.identity);
+            SoundManager.Instance.PlaySound(sfx);
             Destroy(explosion, 1f);
             enemy_class.damageEnemy(damage);
             Destroy(gameObject);

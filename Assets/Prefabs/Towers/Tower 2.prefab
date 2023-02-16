@@ -282,7 +282,7 @@ MonoBehaviour:
   _health: 6
   _damage: 0.5
   textScript: {fileID: 66182739752468264}
-  tower_renderer: {fileID: 0}
+  tower_renderer: {fileID: 8972143829123231272}
   _gold_cost: 7
 --- !u!114 &6076592477602175929
 MonoBehaviour:
@@ -304,6 +304,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   ray_distance: 10
+  shoot_sfx: {fileID: 8300000, guid: 1d5a606a89fd74f4da3b4593f3098ad4, type: 3}
 --- !u!136 &8972143829123231255
 CapsuleCollider:
   m_ObjectHideFlags: 0

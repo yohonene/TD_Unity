@@ -11,6 +11,8 @@ public class goldGenerator : support
     int gold_per_tick;
     [SerializeField]
     Animator cart_animator;
+    [SerializeField]
+    AudioClip gold_sfx;
 
     goldText gold_text;
 
@@ -20,6 +22,7 @@ public class goldGenerator : support
         //Get goldText component from parent (that manages all towers)
         //Do this because PREFAB items will only update the text when the game has ENDED
         //I spent like 4 hours working this out. Text must be made in editor NOT PREFABED
+        SoundManager.Instance.PlaySound(gold_sfx);
         gold_text = GetComponentInParent<goldText>();
         StartCoroutine(gold_gen());
     }

@@ -396,6 +396,7 @@ MonoBehaviour:
   time_between_gen: 3.75
   gold_per_tick: 1
   cart_animator: {fileID: 595349040671419237}
+  gold_sfx: {fileID: 8300000, guid: 3d00585a9f9c625479fee2e936916088, type: 3}
 --- !u!114 &93822573150227033
 MonoBehaviour:
   m_ObjectHideFlags: 0

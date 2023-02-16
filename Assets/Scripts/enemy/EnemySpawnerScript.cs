@@ -68,7 +68,9 @@ public class EnemySpawnerScript : MonoBehaviour
             {
                 if (Random.Range(1, 2) == 1)
                 {
+                    current_spawn_delay -= 1f;
                     enemy_to_be_spawned = enemy_object;
+                    chance_for_2nd_enemy = 3;
                     Instantiate(enemy_to_be_spawned, transform.position, transform.rotation);
                     //SPAWN EVEN MORE MUAHHAAHHA
                 }

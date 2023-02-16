@@ -17,6 +17,8 @@ public class turretShoot : MonoBehaviour
     LayerMask mask;
     [SerializeField]
     private float ray_distance;
+    [SerializeField]
+    AudioClip shoot_sfx;
 
     void Awake()
     {
@@ -74,6 +76,8 @@ public class turretShoot : MonoBehaviour
     /// <returns></returns>
     private IEnumerator Shoot() 
     {
+        //Play sound of shooting
+        SoundManager.Instance.PlaySound(shoot_sfx);
         //Spawn bullet, set to shooters position and rotation
         var new_bullet = Instantiate(bullet, transform.position, transform.rotation);
         //Shoot to max total range

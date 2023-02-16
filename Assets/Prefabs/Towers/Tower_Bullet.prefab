@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower_owner: {fileID: 93822573150227033, guid: 6104ccedb2708074fa1c01ca37cf10c0, type: 3}
+  sfx: {fileID: 8300000, guid: 598771680171b44479329207b8f2e659, type: 3}
 --- !u!65 &9214979721110574740
 BoxCollider:
   m_ObjectHideFlags: 0

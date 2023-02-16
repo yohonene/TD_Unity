@@ -25,6 +25,10 @@ public class enemy : MonoBehaviour
     LayerMask mask;
     [SerializeField]
     Animator enemy_animator;
+    [SerializeField]
+    AudioClip sfx;
+    [SerializeField]
+    AudioClip enemy_death_clip;
 
     private Color org_colour;
 
@@ -33,8 +37,6 @@ public class enemy : MonoBehaviour
     {
         org_colour = enemy_renderer.material.color;
     }
-
-
 
     // Update is called once per frame
     void FixedUpdate()
@@ -83,6 +85,7 @@ public class enemy : MonoBehaviour
         if (_turret)
         {
             enemy_animator.SetBool("isAttacking", true);
+            SoundManager.Instance.PlaySound(sfx);
             _turret.damageTower();
             
         }
@@ -107,6 +110,7 @@ public class enemy : MonoBehaviour
         //Kill enemy if health reaches 0
         if (_health <= 0)
         {
+            SoundManager.Instance.PlaySound(enemy_death_clip);
             Destroy(gameObject);
         }
 

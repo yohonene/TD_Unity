@@ -6,6 +6,8 @@ public class bullet : MonoBehaviour
 {
     [SerializeField]
     turret tower_owner;
+    [SerializeField]
+    AudioClip sfx;
 
     private float damage = 1;
 
@@ -21,6 +23,7 @@ public class bullet : MonoBehaviour
         {
             //Attempt to get enemy class access
             other.gameObject.TryGetComponent(out enemy enemy_class);
+            SoundManager.Instance.PlaySound(sfx);
             //Damage enemy;
             enemy_class.damageEnemy(damage);
             //Hide bullet so it seems like it was absorbed.

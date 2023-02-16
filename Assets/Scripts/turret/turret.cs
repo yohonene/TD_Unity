@@ -16,6 +16,7 @@ public class turret : MonoBehaviour
     [SerializeField]
     int _gold_cost;
 
+
     public int Gold_cost => _gold_cost;
 
     /// <summary>
